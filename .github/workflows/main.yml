@@ -6,23 +6,14 @@ on:
       environment:
         type: environment
         required: true
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build: 
+    run-ons: ubuntu-tatest
 
     steps:
-      - name: Code Checkout
-        uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
-      - name: Configure Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Abhaengigkeiten installieren
-        run: npm install
-
-      - name: Use secret
-        run: |
-          echo "SECRET_API_KEY=$SECRET_API_KEY" >> $GITHUB_ENV
+    - run: echo "Die Environment ist ${{ inputs.environment }}"
+    - run: echo "Der Wert der Environment-Variable DISCRITPION ist ${{ vars.DESCRIPTION }}"
+    - run: echo "Mein Benutzer-Secret ist ${{ secrets.MONGODB_USERNAME }}"
+    
