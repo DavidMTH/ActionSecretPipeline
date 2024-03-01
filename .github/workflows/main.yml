@@ -8,7 +8,7 @@ on:
         required: true
 jobs:
   build: 
-    run-ons: ubuntu-tatest
+    runs-on: ubuntu-tatest
 
     steps:
     - uses: actions/checkout@v3
